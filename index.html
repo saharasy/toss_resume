@@ -1,11 +1,12 @@
-<!DOCTYPE html>
-<!-- saved from url=(0057)file:///C:/Users/com100/Downloads/resume_toss_final6.html -->
-<html lang="ko"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>오승연 — 경력기술서</title>
-<link rel="preconnect" href="https://cdn.jsdelivr.net/">
-<link href="./토스증권_오승연_MarketingManger_files/pretendard.min.css" rel="stylesheet">
+<link rel="preconnect" href="https://cdn.jsdelivr.net">
+<link href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css" rel="stylesheet">
 <style>
 :root {
   --blue: #0064FF;
@@ -309,13 +310,126 @@ nav {
 .act-bul li::before { content: '–'; position: absolute; left: 0; color: var(--blue); }
 .act-bul li strong { color: var(--dark); font-weight: 700; }
 
-/* ── RESPONSIVE ── */
-@media (max-width: 700px) {
-  .kpi-grid { grid-template-columns: repeat(2,1fr); }
-  .two-col  { grid-template-columns: 1fr; }
-  .skill-grid { grid-template-columns: 1fr; }
-  .exp-co-row { flex-direction: column; gap: 6px; }
-  .act-card { grid-template-columns: 1fr; }
+/* ═══════════════════════════════════════
+   MOBILE  (≤ 768px)
+   PC 스타일은 전혀 건드리지 않음
+═══════════════════════════════════════ */
+@media (max-width: 768px) {
+
+  /* NAV */
+  nav { padding: 0 16px; height: 48px; }
+  .nav-brand { font-size: 12px; }
+  .nav-name  { display: none; }
+  .nav-r a   { font-size: 11px; }
+  .nav-r     { gap: 14px; }
+
+  /* HERO */
+  #hero { padding: 72px 20px 40px; }
+  .hero-pill { font-size: 10px; padding: 4px 12px; margin-bottom: 14px; }
+  .hero-name { font-size: 28px; letter-spacing: -.5px; margin-bottom: 8px; }
+  .hero-tagline { font-size: 16px; line-height: 1.4; margin-bottom: 6px; }
+  .hero-tagline-sub { font-size: 12px; margin-bottom: 28px; }
+
+  /* KPI: 2×2 그리드 */
+  .kpi-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 8px; margin-bottom: 24px;
+  }
+  .kpi-card { padding: 14px 14px; }
+  .kpi-value { font-size: 22px; }
+  .kpi-desc  { font-size: 10px; }
+
+  /* 프로필 칩 */
+  .profile-chips { gap: 6px; }
+  .p-chip { font-size: 11px; padding: 4px 10px; }
+
+  /* MAIN WRAP */
+  .main-wrap { padding: 0 16px 64px; }
+
+  /* SECTION HEAD */
+  .section { padding-top: 40px; }
+  .section-head { margin-bottom: 16px; gap: 10px; }
+  .section-icon { width: 26px; height: 26px; font-size: 11px; border-radius: 7px; }
+  .section-title { font-size: 15px; }
+
+  /* SUMMARY */
+  .summary-card { padding: 18px 18px; font-size: 13px; line-height: 1.8; }
+
+  /* EDU + CERT: 세로 스택 */
+  .two-col { grid-template-columns: 1fr; gap: 10px; }
+  .info-card { padding: 16px 18px; }
+  .ic-main { font-size: 13px; }
+  .ic-sub, .ic-meta { font-size: 11px; }
+
+  /* SKILLS: 세로 스택 */
+  .skill-grid { grid-template-columns: 1fr; gap: 8px; }
+  .skill-card { padding: 14px 16px; }
+  .skill-name { font-size: 12.5px; }
+  .skill-note { font-size: 11px; }
+  .skill-lv   { font-size: 9px; }
+
+  /* EXPERIENCE */
+  .exp-block { margin-bottom: 14px; border-radius: 12px; }
+  .exp-header { padding: 16px 16px 0; }
+  .exp-co-row { flex-direction: column; align-items: flex-start; gap: 6px; }
+  .exp-co { font-size: 15px; }
+  .exp-period-tag { font-size: 10.5px; padding: 2px 8px; }
+  .exp-meta { padding-bottom: 12px; gap: 6px; }
+  .exp-role { font-size: 12px; }
+  .tag-team, .tag-type { font-size: 10px; padding: 2px 7px; }
+
+  /* 프로젝트 배너 */
+  .wg-proj-bar { padding: 6px 16px; }
+  .wg-proj-name { font-size: 10px; }
+  .wg-proj-num  { width: 16px; height: 16px; font-size: 9px; }
+
+  /* WG 내부 */
+  .wg-inner { padding: 12px 16px; }
+  .wg-title { font-size: 12.5px; line-height: 1.45; }
+  .wg-dot   { width: 6px; height: 6px; }
+  .wg-title-row { margin-bottom: 10px; gap: 7px; }
+
+  .wg-bullets li { font-size: 12px; line-height: 1.7; padding-left: 12px; }
+
+  /* 성과 칩 */
+  .wg-results { gap: 5px; margin-top: 10px; padding-top: 10px; }
+  .result-chip { font-size: 10.5px; padding: 3px 9px; }
+
+  /* ACTIVITIES */
+  .act-card {
+    grid-template-columns: 1fr;
+    gap: 4px; padding: 14px 16px;
+  }
+  .act-period {
+    font-size: 10.5px;
+    /* 모바일에서는 이름 위에 작게 표시 */
+    margin-bottom: 2px;
+  }
+  .act-name  { font-size: 12.5px; }
+  .act-bul li { font-size: 12px; }
+
+  /* hover 효과 모바일에서 비활성화 (터치 UX) */
+  .kpi-card:hover,
+  .skill-card:hover,
+  .info-card:hover,
+  .exp-block:hover,
+  .act-card:hover,
+  .result-chip:hover {
+    transform: none;
+    box-shadow: var(--shadow-card);
+    background: inherit;
+    border-color: var(--line);
+  }
+  .result-chip:hover { color: var(--blue); background: var(--blue-light); border-color: rgba(0,100,255,.15); }
+}
+
+/* 아주 작은 화면 (≤ 380px) 추가 조정 */
+@media (max-width: 380px) {
+  .kpi-grid { grid-template-columns: repeat(2, 1fr); gap: 6px; }
+  .kpi-value { font-size: 19px; }
+  .hero-name { font-size: 24px; }
+  .hero-tagline { font-size: 14px; }
+  .wg-bullets li { font-size: 11.5px; }
 }
 </style>
 </head>
@@ -329,10 +443,10 @@ nav {
     <span class="nav-name">오승연 · 경력기술서</span>
   </div>
   <div class="nav-r">
-    <a href="file:///C:/Users/com100/Downloads/resume_toss_final6.html#edu">학력</a>
-    <a href="file:///C:/Users/com100/Downloads/resume_toss_final6.html#skills">역량</a>
-    <a href="file:///C:/Users/com100/Downloads/resume_toss_final6.html#exp">경력</a>
-    <a href="file:///C:/Users/com100/Downloads/resume_toss_final6.html#act">활동</a>
+    <a href="#edu">학력</a>
+    <a href="#skills">역량</a>
+    <a href="#exp">경력</a>
+    <a href="#act">활동</a>
   </div>
 </nav>
 
@@ -340,15 +454,15 @@ nav {
 <div style="background:var(--dark); padding-bottom:48px;">
 <section id="hero">
   <div class="hero-inner">
-    <div class="hero-pill sr visible">
+    <div class="hero-pill sr">
       <div class="hero-pill-dot"></div>
       CRM / Growth Marketing Manager
     </div>
-    <h1 class="hero-name sr visible">오승연<em>.</em></h1>
-    <p class="hero-tagline sr visible">데이터로 기회를 찾고, 실행으로 전환을 만드는 마케터</p>
-    <p class="hero-tagline-sub sr visible">SQL · CRM · Paid를 연계해 잠재 유저를 액티브 유저로 전환하는 구조를 직접 설계합니다</p>
+    <h1 class="hero-name sr">오승연<em>.</em></h1>
+    <p class="hero-tagline sr">데이터로 기회를 찾고, 실행으로 전환을 만드는 마케터</p>
+    <p class="hero-tagline-sub sr">SQL · CRM · Paid를 연계해 잠재 유저를 액티브 유저로 전환하는 구조를 직접 설계합니다</p>
 
-    <div class="kpi-grid stagger visible">
+    <div class="kpi-grid stagger">
       <div class="kpi-card">
         <div class="kpi-value">+17%</div>
         <div class="kpi-desc">톡채널 열람 대비<br>클릭률 (전년 대비)</div>
@@ -367,7 +481,7 @@ nav {
       </div>
     </div>
 
-    <div class="profile-chips stagger visible">
+    <div class="profile-chips stagger">
       <div class="p-chip"><strong>소속</strong> 카카오엔터테인먼트 멜론사업성장팀</div>
       <div class="p-chip"><strong>경력</strong> 약 2년</div>
       <div class="p-chip"><strong>학력</strong> 고려대학교 심리학 / LBC</div>
@@ -383,11 +497,11 @@ nav {
 
   <!-- SUMMARY -->
   <div class="section">
-    <div class="section-head sr visible">
+    <div class="section-head sr">
       <div class="section-icon">📋</div>
       <div class="section-title">Summary</div><div class="section-line"></div>
     </div>
-    <div class="summary-card sr visible">
+    <div class="summary-card sr">
       <strong>SQL로 직접 기회를 발굴하고, 데이터 기반 실험으로 Growth와 Revenue를 만드는 마케터</strong>입니다.<br>
       멜론에서 유저 레벨 로데이터를 직접 다루며 전환 병목을 찾아내고,
       <strong>CRM · Paid 채널을 연계해 잠재 유저를 액티브 유저로 전환하는 구조를 직접 설계</strong>했습니다.
@@ -398,11 +512,11 @@ nav {
 
   <!-- EDU + CERT -->
   <div id="edu" class="section">
-    <div class="section-head sr visible">
+    <div class="section-head sr">
       <div class="section-icon">🎓</div>
       <div class="section-title">학력 및 자격</div><div class="section-line"></div>
     </div>
-    <div class="two-col stagger visible">
+    <div class="two-col stagger">
       <div class="info-card">
         <div class="ic-title">Education</div>
         <div class="ic-main">고려대학교</div>
@@ -429,11 +543,11 @@ nav {
 
   <!-- SKILLS -->
   <div id="skills" class="section">
-    <div class="section-head sr visible">
+    <div class="section-head sr">
       <div class="section-icon">⚡</div>
       <div class="section-title">핵심 역량</div><div class="section-line"></div>
     </div>
-    <div class="skill-grid stagger visible">
+    <div class="skill-grid stagger">
 
       <div class="skill-card">
         <div class="skill-top">
@@ -441,8 +555,8 @@ nav {
           <div class="skill-lv">주력</div>
         </div>
         <div class="skill-segments">
-          <div class="seg on" style="background: var(--blue);"></div><div class="seg on" style="background: var(--blue);"></div><div class="seg on" style="background: var(--blue);"></div>
-          <div class="seg on" style="background: var(--blue);"></div><div class="seg on" style="background: var(--blue);"></div>
+          <div class="seg on"></div><div class="seg on"></div><div class="seg on"></div>
+          <div class="seg on"></div><div class="seg on"></div>
         </div>
         <div class="skill-note">TMS · 톡채널 · 푸시 · 앱 배너 옴니채널 / Meta Ads self-serve / 인당 획득비용 12% 절감</div>
       </div>
@@ -453,8 +567,8 @@ nav {
           <div class="skill-lv">주력</div>
         </div>
         <div class="skill-segments">
-          <div class="seg on" style="background: var(--blue);"></div><div class="seg on" style="background: var(--blue);"></div><div class="seg on" style="background: var(--blue);"></div>
-          <div class="seg on" style="background: var(--blue);"></div><div class="seg on half" style="background: rgba(0, 100, 255, 0.35);"></div>
+          <div class="seg on"></div><div class="seg on"></div><div class="seg on"></div>
+          <div class="seg on"></div><div class="seg on half"></div>
         </div>
         <div class="skill-note">유저 레벨 로데이터 직접 추출·분석 / SQLD 보유 / KPI 측정 기준 수립 / Tableau 대시보드 구축</div>
       </div>
@@ -465,8 +579,8 @@ nav {
           <div class="skill-lv">주력</div>
         </div>
         <div class="skill-segments">
-          <div class="seg on" style="background: var(--blue);"></div><div class="seg on" style="background: var(--blue);"></div><div class="seg on" style="background: var(--blue);"></div>
-          <div class="seg on" style="background: var(--blue);"></div><div class="seg on half" style="background: rgba(0, 100, 255, 0.35);"></div>
+          <div class="seg on"></div><div class="seg on"></div><div class="seg on"></div>
+          <div class="seg on"></div><div class="seg on half"></div>
         </div>
         <div class="skill-note">로그인→가입→결제 퍼널 병목 SQL 발굴 / UX 개선 연계 전환 구조 설계 / 직전 월 대비 5배 개선</div>
       </div>
@@ -477,8 +591,8 @@ nav {
           <div class="skill-lv">주력</div>
         </div>
         <div class="skill-segments">
-          <div class="seg on" style="background: var(--blue);"></div><div class="seg on" style="background: var(--blue);"></div><div class="seg on" style="background: var(--blue);"></div>
-          <div class="seg on" style="background: var(--blue);"></div><div class="seg on half" style="background: rgba(0, 100, 255, 0.35);"></div>
+          <div class="seg on"></div><div class="seg on"></div><div class="seg on"></div>
+          <div class="seg on"></div><div class="seg on half"></div>
         </div>
         <div class="skill-note">A/B 테스트 설계·운영 / 데이터 기반 반복 최적화 / 전환율 +5%p · 톡채널 CTR +17%</div>
       </div>
@@ -489,8 +603,8 @@ nav {
           <div class="skill-lv">보유</div>
         </div>
         <div class="skill-segments">
-          <div class="seg on" style="background: var(--blue);"></div><div class="seg on" style="background: var(--blue);"></div><div class="seg on" style="background: var(--blue);"></div>
-          <div class="seg on half" style="background: rgba(0, 100, 255, 0.35);"></div><div class="seg"></div>
+          <div class="seg on"></div><div class="seg on"></div><div class="seg on"></div>
+          <div class="seg on half"></div><div class="seg"></div>
         </div>
         <div class="skill-note">Meta Ads 캠페인 기획·소재·집행 단독 수행 / Google Analytics 채널 성과 분석</div>
       </div>
@@ -501,8 +615,8 @@ nav {
           <div class="skill-lv">주력</div>
         </div>
         <div class="skill-segments">
-          <div class="seg on" style="background: var(--blue);"></div><div class="seg on" style="background: var(--blue);"></div><div class="seg on" style="background: var(--blue);"></div>
-          <div class="seg on" style="background: var(--blue);"></div><div class="seg on half" style="background: rgba(0, 100, 255, 0.35);"></div>
+          <div class="seg on"></div><div class="seg on"></div><div class="seg on"></div>
+          <div class="seg on"></div><div class="seg on half"></div>
         </div>
         <div class="skill-note">Tableau 대시보드 직접 구축 / GA · Amplitude 활용 / SQL 성과 테이블 설계 / Python 데이터 처리</div>
       </div>
@@ -512,13 +626,13 @@ nav {
 
   <!-- EXPERIENCE -->
   <div id="exp" class="section">
-    <div class="section-head sr visible">
+    <div class="section-head sr">
       <div class="section-icon">💼</div>
       <div class="section-title">경력</div><div class="section-line"></div>
     </div>
 
     <!-- ① 카카오엔터 정규직 -->
-    <div class="exp-block sr visible">
+    <div class="exp-block sr">
       <div class="exp-header">
         <div class="exp-co-row">
           <div class="exp-co">㈜카카오엔터테인먼트 — 멜론</div>
@@ -631,7 +745,7 @@ nav {
     </div>
 
     <!-- ② 카카오엔터 인턴 -->
-    <div class="exp-block sr visible">
+    <div class="exp-block sr">
       <div class="exp-header">
         <div class="exp-co-row">
           <div class="exp-co">㈜카카오엔터테인먼트 — 멜론</div>
@@ -682,7 +796,7 @@ nav {
     </div>
 
     <!-- ③ 하이트진로 -->
-    <div class="exp-block sr visible">
+    <div class="exp-block sr">
       <div class="exp-header">
         <div class="exp-co-row">
           <div class="exp-co">㈜하이트진로</div>
@@ -718,7 +832,7 @@ nav {
     </div>
 
     <!-- ④ CIEE -->
-    <div class="exp-block sr visible">
+    <div class="exp-block sr">
       <div class="exp-header">
         <div class="exp-co-row">
           <div class="exp-co">CIEE Seoul</div>
@@ -750,11 +864,11 @@ nav {
 
   <!-- ACTIVITIES -->
   <div id="act" class="section">
-    <div class="section-head sr visible">
+    <div class="section-head sr">
       <div class="section-icon">🏆</div>
       <div class="section-title">대외활동</div><div class="section-line"></div>
     </div>
-    <div class="act-grid sr visible">
+    <div class="act-grid sr">
 
       <div class="act-card">
         <div class="act-period">2024.04 – 2024.07</div>
@@ -868,6 +982,5 @@ const segObs = new IntersectionObserver((entries) => {
 }, { threshold: 0.5 });
 document.querySelectorAll('.skill-card').forEach(el => segObs.observe(el));
 </script>
-
-
-</body></html>
+</body>
+</html>
